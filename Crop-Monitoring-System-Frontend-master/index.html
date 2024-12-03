@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In / Sign Up</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/index.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="form-card">
+        <!-- Sign In Form -->
+        <div class="form-front">
+          <h3>Sign In</h3>
+          <h2>
+            <img alt="loginIcon" id="logIcon" src="assets/images/icon.png">
+          </h2>
+          <form id="signInForm">
+            <div class="mb-3">
+              <label for="signInEmail" class="form-label">Email :</label>
+              <input
+                type="email"
+                class="form-control"
+                id="signInEmail"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="signInPassword" class="form-label">Password :</label>
+              <input
+                type="password"
+                class="form-control"
+                id="signInPassword"
+                required
+              />
+            </div>
+            <button type="submit" class="btn">Sign In</button>
+            <p class="mt-3" style="font-size: 12px">
+              <a href="#">Forgot Password?</a>
+            </p>
+            <p class="text-center mt-3">
+              Not a member? <a href="#" id="showSignUp">Sign Up</a>
+            </p>
+          </form>
+        </div>
+        <!-- Sign Up Form -->
+        <div class="form-back">
+          <h3>Sign Up</h3>
+          <form id="signUpForm">
+            <div class="mb-3">
+              <label for="signUpEmail" class="form-label">Email :</label>
+              <input
+                type="email"
+                class="form-control"
+                id="signUpEmail"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="signUpPassword" class="form-label">Password :</label>
+              <input
+                type="password"
+                class="form-control"
+                id="signUpPassword"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <select class="form-control">
+                <option value="" disabled selected>Choose Role</option>
+                <option value="MANAGER">MANAGER</option>
+                <option value="SCIENTIST">SCIENTIST</option>
+                <option value="ADMINISTRATIVE">ADMINISTRATIVE</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn">Sign Up</button>
+            <p class="text-center mt-3">
+              Already a member? <a href="#" id="showSignIn">Sign In</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/index.js"></script>
+    <script></script>
+  </body>
+</html>

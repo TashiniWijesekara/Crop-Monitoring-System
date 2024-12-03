@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crop Management</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/loader.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <div id="page-loader" class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+    <div id="sidebar-container"></div>
+
+    <!-- Main Content -->
+    <div id="content" style="margin-left: 260px; margin-top: 60px">
+      <div class="form-container">
+        <div class="mb-3 position-relative d-flex justify-content-end">
+          <input
+            type="text"
+            id="searchCrop"
+            class="form-control"
+            placeholder="Crop Code or Common Name"
+            style="width: 250px"
+          />
+          <i
+            class="fas fa-search position-absolute"
+            id="searchIcon"
+            style="
+              right: 10px;
+              top: 50%;
+              transform: translateY(-50%);
+              cursor: pointer;
+              line-height: 1;
+            "
+          ></i>
+        </div>
+        
+        <h2>Crop Management</h2>
+        <form id="cropForm">
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cropCode" class="form-label">Crop Code</label>
+              <input type="text" class="form-control" id="cropCode" readonly />
+            </div>
+            <div class="col-md-6">
+              <label for="cropCommonName" class="form-label">Common Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="cropCommonName"
+                required
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cropScientificName" class="form-label"
+                >Scientific Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="cropScientificName"
+                required
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="cropCategory" class="form-label">Category</label>
+              <select class="form-select" id="cropCategory" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Rice">Rice</option>
+                <option value="Cowpea">Cowpea</option>
+                <option value="Green gram">Green gram</option>
+                <option value="Chickpea">Chickpea</option>
+                <option value="Sweet potato">Sweet potato</option>
+                <option value="Reddish">Reddish</option>
+                <option value="Cassava">Cassava</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cropSeason" class="form-label">Crop Season</label>
+              <select class="form-select" id="cropSeason" required>
+                <option value="" disabled selected>Select Season</option>
+                <option value="Kharif Season">Kharif Season</option>
+                <option value="Rabi Season">Rabi Season</option>
+                <option value="Zaid Season">Zaid Season</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="field" class="form-label">Field</label>
+              <select class="form-select" id="field" required>
+                <option value="" disabled selected>Select Field</option>
+              </select>
+            </div>
+          </div>
+          <!-- Crop Image -->
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <label for="cropImage" class="form-label">Crop Image</label>
+              <input
+                type="file"
+                class="form-control"
+                id="cropImage"
+                accept="image/*"
+              />
+              <img
+                id="previewCropImage"
+                src="#"
+                alt="Crop Image Preview"
+                class="img-fluid mt-2"
+                style="display: none; max-height: 200px"
+              />
+            </div>
+          </div>
+          <!-- Buttons -->
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex gap-2">
+              <button
+                type="submit"
+                class="btn btn-success flex-grow-1"
+                id="saveBtn"
+                style="width: 100px"
+              >
+                Save
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary flex-grow-1"
+                id="updateBtn"
+                style="width: 100px"
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning flex-grow-1"
+                id="clearBtn"
+                style="width: 100px"
+              >
+                Clear
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger flex-grow-1"
+                id="deleteBtn"
+                style="width: 100px"
+              >
+                Delete
+              </button>
+            </div>
+            <button
+              type="button"
+              class="btn btn-info"
+              data-bs-toggle="modal"
+              data-bs-target="#cropListModal"
+              id="getAllBtn"
+              style="width: 100px"
+            >
+              Get All
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- get all popup -->
+      <div
+        class="modal fade"
+        id="cropListModal"
+        tabindex="-1"
+        aria-labelledby="cropListModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="cropListModalLabel">All Crops</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div id="cropList">
+                <table class="table table-bordered">
+                  <thead class="table-success">
+                    <tr>
+                      <th>Crop Code</th>
+                      <th>Common Name</th>
+                      <th>Scientific Name</th>
+                      <th>Category</th>
+                      <th>Season</th>
+                      <th>Field</th>
+                      <th>Image</th>
+                    </tr>
+                  </thead>
+                  <tbody id="cropTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="/assets/js/loader.js"></script>
+    <script src="/assets/js/sidebarController.js"></script>
+    <script src="/assets/js/crop.js"></script>
+  </body>
+</html>
