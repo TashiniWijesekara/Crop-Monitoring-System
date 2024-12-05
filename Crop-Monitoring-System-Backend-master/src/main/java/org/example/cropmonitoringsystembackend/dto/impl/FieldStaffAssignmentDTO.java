@@ -12,5 +12,6 @@ import org.example.cropmonitoringsystembackend.dto.FieldStaffAssigmentStatus;
 public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
     private Long id;
     private String fieldCode;
+    private String staffId;
 
 }
