@@ -23,3 +23,4 @@ public class FieldAssignmentStaffController {
         fieldAssignmentStaffService.saveAssignment(assignmentDTO);
         return ResponseEntity.ok("Assignment saved successfully");
     }
+}
