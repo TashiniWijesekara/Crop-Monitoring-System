@@ -13,5 +13,6 @@ public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
     private Long id;
     private String fieldCode;
     private String staffId;
+    private String assignedRole;
 
 }
