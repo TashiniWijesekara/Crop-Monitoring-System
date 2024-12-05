@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface FieldAssignmentStaffService {
     void saveAssignment(FieldStaffAssignmentDTO fieldStaffAssignmentDTO);
-    List<> getAllFieldStaffAssignments();
+    List<FieldStaffAssignmentDTO> getAllFieldStaffAssignments();
 
 }
