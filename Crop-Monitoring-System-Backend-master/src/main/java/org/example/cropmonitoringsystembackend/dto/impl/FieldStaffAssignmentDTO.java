@@ -10,6 +10,6 @@ import org.example.cropmonitoringsystembackend.dto.FieldStaffAssigmentStatus;
 @NoArgsConstructor
 @Data
 public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
-
+    private Long id;
 
 }
