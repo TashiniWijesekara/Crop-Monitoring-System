@@ -47,8 +47,8 @@ body {
 /*  text-align: center;*/
 /*}*/
 img{
-  width: 33%;
-  height: 20vh;
+  width: 30%;
+  height: 18vh;
   text-align: center;
 }
 h2 {
@@ -66,8 +66,8 @@ h2 {
 }
 .btn {
   margin-top: 1rem;
-  margin-left: 9.5rem;
-  width: 40%;
+  margin-left: 9.2rem;
+  width: 35%;
   padding: 10px;
   border-radius: 10px;
   font-size: 1rem;
