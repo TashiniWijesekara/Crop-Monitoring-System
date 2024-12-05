@@ -11,5 +11,6 @@ import org.example.cropmonitoringsystembackend.dto.FieldStaffAssigmentStatus;
 @Data
 public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
     private Long id;
+    private String fieldCode;
 
 }
