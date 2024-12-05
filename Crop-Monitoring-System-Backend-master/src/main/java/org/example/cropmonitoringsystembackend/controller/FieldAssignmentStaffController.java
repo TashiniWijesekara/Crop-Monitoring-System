@@ -23,4 +23,8 @@ public class FieldAssignmentStaffController {
         fieldAssignmentStaffService.saveAssignment(assignmentDTO);
         return ResponseEntity.ok("Assignment saved successfully");
     }
+    @GetMapping(value = "allassignments", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<FieldStaffAssignmentDTO> getAllAssignments() {
+        return fieldAssignmentStaffService.getAllFieldStaffAssignments();
+    }
 }
