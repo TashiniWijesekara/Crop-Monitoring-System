@@ -14,5 +14,6 @@ public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
     private String fieldCode;
     private String staffId;
     private String assignedRole;
+    private String assignmentDate;
 
 }
