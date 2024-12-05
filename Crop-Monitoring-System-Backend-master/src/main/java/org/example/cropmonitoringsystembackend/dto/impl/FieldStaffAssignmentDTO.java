@@ -9,5 +9,7 @@ import org.example.cropmonitoringsystembackend.dto.FieldStaffAssigmentStatus;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class FieldStaffAssignmentDTO {
+public class FieldStaffAssignmentDTO implements FieldStaffAssigmentStatus {
+
+
 }
